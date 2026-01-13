@@ -311,6 +311,7 @@ def scrape_listing(wait):
     name = get_contact_name(wait)
     print(name)
 
+
 def apply_to_listing(URL):
     driver = get_driver()
     wait = WebDriverWait(driver, 6)

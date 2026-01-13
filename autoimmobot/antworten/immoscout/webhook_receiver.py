@@ -39,13 +39,17 @@ def bot_worker():
         print(f"🚀 Starte Prozess für: {url}")
         try:
             immoscout.apply_to_listing(url)
+            
+
             # URL erst nach Erfolg (oder versuchter Bewerbung) entfernen
             #remove_url_from_file(url)
+            
+
             print(f"✅ Erledigt und aus Datei entfernt: {url}")
         except Exception as e:
             print(f"❌ Fehler bei {url}: {e}")
             # Optional: Hier entscheiden, ob die URL in der Datei bleiben soll (für Retry)
-        
+
         task_queue.task_done()
         print("☕️ Bereit für das nächste Listing...")
 
